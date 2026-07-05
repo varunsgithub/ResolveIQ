@@ -1,0 +1,1 @@
+near-real-time detection of published complaints, subject to a 15-day publication lag
