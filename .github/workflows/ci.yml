@@ -1,0 +1,52 @@
+# .github/workflows/ci.yml
+name: ResolveIQCI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        run: uv python install 3.11
+
+      # ── Ingestion ──────────────────────────────────────────
+      - name: Sync ingestion dependencies
+        run: cd ingestion && uv sync
+
+      - name: Lint ingestion
+        run: cd ingestion && uv run ruff check .
+
+      - name: Test ingestion
+        run: cd ingestion && uv run pytest
+
+      # ── API ────────────────────────────────────────────────
+      - name: Sync api dependencies
+        run: cd api && uv sync
+
+      - name: Lint api
+        run: cd api && uv run ruff check .
+
+      - name: Test api
+        run: cd api && uv run pytest
+
+      # ── ML ─────────────────────────────────────────────────
+      - name: Sync ml dependencies
+        run: cd ml && uv sync --python 3.11
+
+      - name: Lint ml
+        run: cd ml && uv run ruff check .
+
+      - name: Test ml
+        run: cd ml && uv run pytest
