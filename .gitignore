@@ -4,5 +4,9 @@ __pycache__/
 *.pyc
 
 #Ignoring ruff cache
-.ruff_cache
+*.ruff_cache
 .env
+
+#Working notebooks
+docs/exploration/data/
+*.csv

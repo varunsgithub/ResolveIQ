@@ -13,6 +13,10 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.0",
     "pytest>=9.1.1",
     "ruff>=0.15.20",
+    "seaborn>=0.13.2",
 ]
