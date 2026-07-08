@@ -10,3 +10,6 @@ __pycache__/
 #Working notebooks
 docs/exploration/data/
 *.csv
+
+# Ds stores
+*.DS_store
