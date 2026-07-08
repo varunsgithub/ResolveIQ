@@ -18,3 +18,12 @@ Python for ML: 3.11
 
 # Misc Notes:
 AWS region: us-east-1
+
+# Key Findings:
+  - Dataset size (3-year slice): 9469601
+  - Distinct products: 14
+  - Distinct companies: 5170
+  - Narratives present: 27% of complaints
+  - Median narrative length: 661 characters (RAG corpus ~80% complaints)
+  - Timely response "No" rate: 0.4% (urgency classifier positive class rate)
+  - Surge: visible from 2023/2024, driven by a spike in the credit repair agents filing complaints on behalf of customers for repairing their credit scores.
