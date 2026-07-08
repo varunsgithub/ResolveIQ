@@ -8,7 +8,6 @@ __pycache__/
 .env
 
 #Working notebooks
-docs/exploration/data/
 *.csv
 
 # Ds stores
